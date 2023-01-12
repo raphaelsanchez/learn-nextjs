@@ -12,32 +12,65 @@
       const app = document.getElementById("app");
 
       function Header({ title }) {
-        return <h1>{title ? title : 'Hello World!'}</h1>;
+        return <h1>{title ? title : "Hello World!"}</h1>;
       }
 
       function HomePage() {
+        // State
         const [likes, setLikes] = React.useState(0);
+        const [friends, setFriends] = React.useState([
+          "Gaylord",
+          "Sarah",
+          "Raphael",
+        ]);
+        const [newFriend, setNewFriend] = React.useState("");
 
-        const friends = ["Gaylord", "Sarah", "Raphael"];
-
-        function handleClick() {
+        // Event handler
+        function handleLikes() {
           setLikes(likes + 1);
         }
+        function handleChange(event) {
+          setNewFriend(event.target.value.split(","));
+        }
+        function handleSubmit(event) {
+          event.preventDefault();
+          setFriends([...friends, ...newFriend]);
+          setNewFriend("");
+        }
+        function handleDelete(name) {
+          setFriends(friends.filter((friend) => friend !== name));
+        }
+
+        // Render
         return (
           <>
             <Header title="Develop. Preview. Ship. 🚀" />
             <p>React is a JavaScript library for building user interfaces.</p>
 
             <ul>
-              {friends.map((name) => <li key={name}>{name}</li>)}
+              {friends.map((name) => (
+                <li key={name}>
+                  {name} <button onClick={() => handleDelete(name)}>x</button>
+                </li>
+              ))}
             </ul>
 
-            <button onClick={handleClick}>Like ({likes})</button>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                onChange={handleChange}
+                value={newFriend}
+                placeholder="Ajouter un ami"
+              />
+              <button>Ajouter un ami</button>
+            </form>
+
+            <button onClick={handleLikes}>Like ({likes})</button>
           </>
         );
       }
 
-      ReactDOM.render(<HomePage/>, app);
+      ReactDOM.render(<HomePage />, app);
     </script>
   </body>
 </html>
