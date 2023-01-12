@@ -26,9 +26,6 @@
         const [newFriend, setNewFriend] = React.useState("");
 
         // Event handler
-        function handleLikes() {
-          setLikes(likes + 1);
-        }
         function handleChange(event) {
           setNewFriend(event.target.value.split(","));
         }
@@ -39,6 +36,9 @@
         }
         function handleDelete(name) {
           setFriends(friends.filter((friend) => friend !== name));
+        }
+        function handleDeleteAll() {
+          setFriends([]);
         }
 
         // Render
@@ -65,7 +65,7 @@
               <button>Ajouter un ami</button>
             </form>
 
-            <button onClick={handleLikes}>Like ({likes})</button>
+            <button onClick={handleDeleteAll}>Remove all friends x</button>
           </>
         );
       }
