@@ -15,4 +15,7 @@ Support de formation sur https://nextjs.org/learn/foundations/about-nextjs
 
 ### 14 janvier 2023
 
-- [ ] [How Next.js Works](https://nextjs.org/learn/foundations/how-nextjs-works)
+- [x] [How Next.js Works](https://nextjs.org/learn/foundations/how-nextjs-works)
+
+## 20 janvier 2023
+- [ ] [Create a Next.js App](https://nextjs.org/learn/basics/create-nextjs-app)
