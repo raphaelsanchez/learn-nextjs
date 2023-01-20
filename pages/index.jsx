@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css';
+import Link from 'next/link'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -11,14 +12,19 @@ export default function Home() {
 
       <main>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <Link href="/posts/first-post">Next.js!</Link>
         </h1>
 
         <p className={styles.description}>
           Get started by editing <code>pages/index.js</code>
         </p>
 
-        <div className={styles.grid}>
+        <nav className={styles.nav}>
+          <Link href="/posts/first-post">First Post</Link>
+          <Link href="/posts/second-post">Second Post</Link>
+        </nav>
+
+        <section className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -46,7 +52,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </section>
       </main>
 
       <footer>
