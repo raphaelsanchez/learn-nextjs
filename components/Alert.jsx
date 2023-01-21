@@ -2,24 +2,14 @@ import styles from './Alert.module.css'
 import { clsx } from 'clsx'
 import { AlertTriangle, CheckCircle, Info, XOctagon } from 'react-feather'
 
-function AlertIcon({ icon }) {
-  console.log('AlertIcon : ', icon)
-  switch (icon) {
-    case 'success':
-      return <CheckCircle />
-    case 'error':
-      return <XOctagon />
-    case 'info':
-      return <Info />
-    case 'warning':
-      return <AlertTriangle />
-    default:
-      return null
-  }
-}
-
 export default function Alert({ children, type }) {
-  console.log('Alert : ', type)
+  const icon = {
+    success: <CheckCircle />,
+    error: <XOctagon />,
+    info: <Info />,
+    warning: <AlertTriangle />,
+  }
+
   return (
     <div
       className={clsx({
@@ -30,7 +20,7 @@ export default function Alert({ children, type }) {
         [styles.container]: true,
       })}
     >
-      <AlertIcon icon={type} />
+      {icon[type]}
       {children}
     </div>
   )
