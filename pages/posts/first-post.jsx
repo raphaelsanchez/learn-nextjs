@@ -17,7 +17,6 @@ export default function FirstPost() {
       <h1>
         First Post <i data-feather="circle"></i>
       </h1>
-      <Link href="/">← Back to home</Link>
     </Layout>
   )
 }

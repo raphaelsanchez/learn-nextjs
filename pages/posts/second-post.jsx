@@ -12,7 +12,6 @@ export default function SecondPost() {
       <h1>
         Second Post <i data-feather="circle"></i>
       </h1>
-      <Link href="/">← Back to home</Link>
     </Layout>
   )
 }
