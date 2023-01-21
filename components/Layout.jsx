@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 import styles from './Layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
@@ -17,6 +18,11 @@ export default function Layout({ children, home }) {
           content="Learn how to build a personal website using Next.js"
         />
         <meta name="og:title" content={siteTitle} />
+
+        <Script
+          src="https://unpkg.com/feather-icons"
+          onLoad={() => feather.replace()}
+        />
       </Head>
 
       <a className={styles.skipLink} href="#main-content">
