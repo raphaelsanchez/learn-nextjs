@@ -18,11 +18,6 @@ export default function Layout({ children, home }) {
           content="Learn how to build a personal website using Next.js"
         />
         <meta name="og:title" content={siteTitle} />
-
-        <Script
-          src="https://unpkg.com/feather-icons"
-          onLoad={() => feather.replace()}
-        />
       </Head>
 
       <a className={styles.skipLink} href="#main-content">

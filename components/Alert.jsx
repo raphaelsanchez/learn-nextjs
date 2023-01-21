@@ -1,17 +1,18 @@
 import styles from './Alert.module.css'
 import { clsx } from 'clsx'
+import { AlertTriangle, CheckCircle, Info, XOctagon } from 'react-feather'
 
 function AlertIcon({ icon }) {
   console.log('AlertIcon : ', icon)
   switch (icon) {
     case 'success':
-      return <i data-feather="check-circle"></i>
+      return <CheckCircle />
     case 'error':
-      return <i data-feather="x-octagon"></i>
+      return <XOctagon />
     case 'info':
-      return <i data-feather="info"></i>
+      return <Info />
     case 'warning':
-      return <i data-feather="alert-triangle"></i>
+      return <AlertTriangle />
     default:
       return null
   }
