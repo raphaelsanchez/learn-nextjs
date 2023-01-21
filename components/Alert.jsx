@@ -8,6 +8,7 @@ export default function Alert({ children, type }) {
     error: <XOctagon />,
     info: <Info />,
     warning: <AlertTriangle />,
+    undefined: <></>
   }
 
   return (
