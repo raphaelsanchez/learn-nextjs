@@ -36,11 +36,8 @@ export default function Home() {
 
       <section id="last-posts">
         <h2 className={utilStyles.headingLg}>Derniers articles</h2>
-        <Alert type="info">Ces contenus sont à convertir en markdown !</Alert>
-        <ul>
-          <li><Link href="/posts/first-post">First post</Link></li>
-          <li><Link href="/posts/second-post">Second post</Link></li>
-        </ul>
+        <Alert type="info">Aucun post pour le moment</Alert>
+        
       </section>
     </Layout>
   )
